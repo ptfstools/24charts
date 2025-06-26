@@ -124,8 +124,8 @@ function fresh() {
         chartURL.value = chartURL.value.replace("#", "")
         let c = charts.find(c => `${c.id}` == chartURL.value)
         if (c == undefined) {
-            if (!window.location.href.endsWith("/")) {
-                window.location.href = "/"
+            if (!window.location.href.endsWith("/24charts")) {
+                window.location.href = "/24charts"
             }
         } else {
             currentChart.value = c
@@ -149,7 +149,7 @@ function refresh() {
     }).setView([0, 0], 1);
 
     const img = new Image();
-    img.src = "/" + currentChart.value.file;
+    img.src = "/24charts" + currentChart.value.file;
     img.addEventListener("load", () => {
         let scaleFactor = img.naturalHeight / 400
 
@@ -247,7 +247,7 @@ watch(currentChart, refresh)
 
 // Download Chart function
 function downloadChart(chart: Chart) {
-    const url = `/${chart.file}`;
+    const url = `/24charts${chart.file}`;
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', chart.name);
