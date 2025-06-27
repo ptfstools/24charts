@@ -17,7 +17,7 @@ Welcome to **24Charts**, a chart database for the Roblox game Pilot Training Fli
 
 You can access 24Charts directly through GitHub Pages:
 
-- [24Charts on GitHub Pages](https://formicacidgd.github.io/24charts/)
+- [24Charts on GitHub Pages](https://charts.awdevsoftware.org/)
 
 ## Contributing
 
@@ -34,8 +34,8 @@ Contributions are always welcome for charts! Here’s how you can help:
 
 If you have any questions or suggestions, feel free to reach out!
 
-- **GitHub Issues**: [Open an Issue](https://github.com/formicacidgd/24charts/issues)
-- **Discord**: [Join our Awesome Discord Community](https://discord.gg/8tSu4ewdsM)
+- **GitHub Issues**: [Open an Issue](https://github.com/ptfstools/24charts/issues)
+- **Discord**: [Join our Discord Community](https://discord.gg/8tSu4ewdsM)
 
 ---
 
