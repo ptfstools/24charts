@@ -15,9 +15,9 @@ Welcome to **24Charts**, a chart database for the Roblox game Pilot Training Fli
 
 ### Accessing 24Charts
 
-You can access 24Charts directly through GitHub Pages:
+You can access 24Charts directly here:
 
-- [24Charts on GitHub Pages](https://charts.awdevsoftware.org/)
+- [24Charts](https://charts.awdevsoftware.org/)
 
 ## Contributing
 
