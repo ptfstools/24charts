@@ -3,7 +3,7 @@
         <div id="app">
             <nav class="bg-fox-2 text-fox-2 fixed left-0 top-0 z-30 flex h-12 w-full items-center border-b border-fox-500 px-4">
                 <div class="flex-1 font-medium logo" @click="goHome()">24Charts</div>
-                <div class="flex-1 justify-center hidden md:flex">{{ currentChart.airport }} - {{ currentChart.author }}</div>
+                <div class="flex-1 justify-center hidden md:flex" style="text-align: center;">{{ currentChart.airport }} - {{ currentChart.author }}</div>
             </nav>
             <main class="bg-fox-1 text-fox-2 min-h-screen w-full pt-12 h-screen overflow-hidden">
                 <div class="fox-app-swipe-target flex h-full w-full items-stretch">
@@ -254,7 +254,7 @@ const filteredAirports = computed(() => {
 watch(currentChart, refresh);
 
 function downloadChart(chart: Chart) {
-    const url = `/24charts${chart.file}`;
+    const url = `https://charts.awdevsoftware.org/${chart.file}`;
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', chart.name);

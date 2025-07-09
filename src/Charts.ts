@@ -3610,6 +3610,15 @@ let charts: Chart[] = [
         file: '/charts/mellor/7.png',
         runways: ["25"],
     },
+    {
+        airport: "IPPH",
+        author: "Zedruc",
+        id: 395,
+        category: "APP",
+        name: "ILS Y Rwy 25",
+        file: '/charts/mellor/zedruc/1.png',
+        runways: ["15"],
+    },
 ]
 export { charts, type Chart }
 

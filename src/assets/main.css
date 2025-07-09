@@ -1565,3 +1565,23 @@ body {
 .airport-grid-wrapper::-webkit-scrollbar-thumb:hover {
   background: #6366f1;
 }
+
+#ligmatizer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#ligmatizer.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+}
+
+.spinner {
+    border-top: 4px solid #3b82f6;
+    border-right: 4px solid transparent;
+}
