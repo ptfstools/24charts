@@ -3616,7 +3616,7 @@ let charts: Chart[] = [
         id: 395,
         category: "APP",
         name: "ILS Y Rwy 25",
-        file: '/charts/mellor/zedruc/1.png',
+        file: '/charts/perth/zedruc/1.png',
         runways: ["15"],
     },
 ]
