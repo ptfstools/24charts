@@ -111,7 +111,7 @@
 import "@/assets/app.css";
 import L from "leaflet";
 import { generateAirports } from "ptfst-db";
-import { onBeforeUnmount, onMounted, ref, watch, type Ref, computed } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref, watch, type Ref } from "vue";
 import { charts, type Chart } from "./Charts";
 
 let currentChart: Ref<Chart> = ref(charts[0]);
@@ -145,6 +145,10 @@ onBeforeUnmount(() => {
     window.removeEventListener("resize", refresh);
 });
 
+let api_url = "https://charts.awdevsoftware.org";
+if (window.location.hostname == "localhost") {
+    api_url = ""
+}
 let map: L.Map;
 
 function refresh() {
@@ -156,7 +160,7 @@ function refresh() {
     }).setView([0, 0], 1);
 
     const img = new Image();
-    img.src = "https://charts.awdevsoftware.org" + currentChart.value.file;
+    img.src = api_url + currentChart.value.file;
     img.addEventListener("load", () => {
         let scaleFactor = img.naturalHeight / 400;
         L.imageOverlay(img.src, [[0, 0], [img.naturalHeight / scaleFactor, img.naturalWidth / scaleFactor]], {
@@ -254,7 +258,7 @@ const filteredAirports = computed(() => {
 watch(currentChart, refresh);
 
 function downloadChart(chart: Chart) {
-    const url = `https://charts.awdevsoftware.org/${chart.file}`;
+    const url = `${api_url}/${chart.file}`;
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', chart.name);
