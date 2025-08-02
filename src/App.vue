@@ -87,10 +87,10 @@
     <div class="font-body dark airport-wrap">
         <div class="header">
             <h1 class="header-title">Select an Airport</h1>
-            <input type="text" v-model="searchQuery" placeholder="Search airports (e.g., KJFK, EGLL)" class="search-input" />
+            <input type="text" v-mode="searchQuery" placeholder="Search airports (e.g., IRFD, IPPH)" class="search-input" />
         </div>
         <div v-if="filteredAirports.length === 0" class="no-results">
-            <p>No airports found matching your search.</p>
+            <p>Huh. That doesn't seem quite right doesn't it?</p>
         </div>
         <div v-else class="airport-grid-wrapper">
             <div class="airport-grid">
@@ -156,7 +156,7 @@ function refresh() {
     }).setView([0, 0], 1);
 
     const img = new Image();
-    img.src = "https://charts.awdevsoftware.org/" + currentChart.value.file;
+    img.src = "https://charts.awdevsoftware.org" + currentChart.value.file;
     img.addEventListener("load", () => {
         let scaleFactor = img.naturalHeight / 400;
         L.imageOverlay(img.src, [[0, 0], [img.naturalHeight / scaleFactor, img.naturalWidth / scaleFactor]], {

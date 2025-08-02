@@ -26,7 +26,7 @@ Contributions are always welcome for charts! Here’s how you can help:
 1. Fork the repository.
 2. Make your changes and commit them to your repo.
 3. Open a Pull Request.
-4. Ensure that the Chart is acceptable and used in the ATC24 charts bot. 
+4. Ensure that the Chart is acceptable, you can DM us for this. 
 5. Pray that your PR is accepted and deployed :)
 6. Pray that you didn't take down production lol
 
@@ -35,7 +35,7 @@ Contributions are always welcome for charts! Here’s how you can help:
 If you have any questions or suggestions, feel free to reach out!
 
 - **GitHub Issues**: [Open an Issue](https://github.com/ptfstools/24charts/issues)
-- **Discord**: [Join our Discord Community](https://discord.gg/8tSu4ewdsM)
+- **Discord**: [Join our Discord Community](https://discord.gg/Jx8MRQHZhv)
 
 ---
 
