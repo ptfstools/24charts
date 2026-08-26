@@ -2,13 +2,19 @@
     <div class="font-body dark" :hidden="chartURL == ''">
         <div id="app">
             <nav class="bg-fox-2 text-fox-2 fixed left-0 top-0 z-30 flex h-12 w-full items-center border-b border-fox-500 px-4">
+                <button @click="isSidebarOpen = !isSidebarOpen" class="xl:hidden mr-3 p-1 rounded hover:bg-fox-3 focus:outline-none flex-shrink-0 z-10" aria-label="Toggle navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
                 <div class="flex-1 font-medium logo" @click="goHome()">24Charts</div>
                 <div class="flex-1 justify-center hidden md:flex" style="text-align: center;">{{ currentChart.airport }} - {{ currentChart.author }}</div>
             </nav>
             <main class="bg-fox-1 text-fox-2 min-h-screen w-full pt-12 h-screen overflow-hidden">
-                <div class="fox-app-swipe-target flex h-full w-full items-stretch">
+                <div class="fox-app-swipe-target flex h-full w-full items-stretch relative">
+                    <div v-if="isSidebarOpen" @click="isSidebarOpen = false" class="fixed inset-0 bg-black/50 z-10 xl:hidden"></div>
                     <div class="z-20 w-0 transition-all xl:w-96" style="transform: translateX(0px); transition-duration: 150ms;">
-                        <div class="bg-fox-2 flex flex-col items-stretch gap-4 p-4 relative z-20 h-full w-screen transition-transform xs:w-96 -translate-x-full xl:translate-x-0">
+                        <div class="bg-fox-2 flex flex-col items-stretch gap-4 p-4 relative z-20 h-full w-screen transition-transform xs:w-96 xl:translate-x-0" :class="isSidebarOpen ? 'translate-x-0' : '-translate-x-full'">
                             <div class="flex items-center gap-2">
                                 <h2 class="flex-grow font-semibold">Charts</h2>
                                 <button @click="downloadCurrentChart" class="download-btn">Download Current Chart</button>
@@ -118,6 +124,7 @@ let currentChart: Ref<Chart> = ref(charts[0]);
 let chartURL: Ref<string | null> = ref(null);
 let currentCategory = ref("");
 let searchQuery = ref("");
+let isSidebarOpen = ref(false);
 
 onMounted(() => {
     fresh();
@@ -228,6 +235,7 @@ function setChart(c: Chart) {
     chartURL.value = `${c.id}`;
     currentChart.value = c;
     currentCategory.value = c.category;
+    isSidebarOpen.value = false;
     window.requestAnimationFrame(refresh);
 }
 
@@ -236,6 +244,7 @@ function goHome() {
     chartURL.value = ``;
     currentChart.value = charts[0];
     currentCategory.value = "";
+    isSidebarOpen.value = false;
 }
 
 function getPacks(airport: string) {

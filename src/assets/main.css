@@ -1528,7 +1528,6 @@ body {
   position: relative;
   cursor: pointer;
   color: #ffffff;
-  position: absolute;
 }
 
 .nocurs a {
